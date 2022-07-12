@@ -1,15 +1,34 @@
+
+import { useState } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import NotificationButton from '../NotificationsButton'
 import './styles.css'
+
 function SalesCard() {
+   const [minDate, setMinDate] = useState(new Date());
+   const [maxDate, setMaxDate] = useState(new Date());
+  // const date = new Date(new Date().setDate(new Date().getDate() - 365));
+
+
     return (
         <div className="dsmeta-card">
             <h2 className="dsmeta-sales-title">Vendas</h2>
             <div>
                 <div className="dsmeta-form-control-container">
-                    <input className="dsmeta-form-control" type="text"/>
+                    <DatePicker
+                        selected={minDate}
+                        onChange={(date: Date) => { }}
+                        className="dsmeta-form-control"
+                        dateFormat="dd/MM/yyyy"
+                    />
                 </div>
                 <div className="dsmeta-form-control-container">
-                    <input className="dsmeta-form-control" type="text"/>
+                    <DatePicker selected={maxDate}
+                        onChange={(date: Date) => { }}
+                        className="dsmeta-form-control"
+                        dateFormat="dd/MM/yyyy"
+                        />
                 </div>
             </div>
 
@@ -37,7 +56,7 @@ function SalesCard() {
                             <td>
                                 <div className="dsmeta-red-btn-container">
                                     <div className="dsmeta-red-btn">
-                                        <NotificationButton/>
+                                        <NotificationButton />
                                     </div>
                                 </div>
                             </td>
@@ -52,7 +71,7 @@ function SalesCard() {
                             <td>
                                 <div className="dsmeta-red-btn-container">
                                     <div className="dsmeta-red-btn">
-                                    <NotificationButton/>
+                                        <NotificationButton />
                                     </div>
                                 </div>
                             </td>
@@ -67,7 +86,7 @@ function SalesCard() {
                             <td>
                                 <div className="dsmeta-red-btn-container">
                                     <div className="dsmeta-red-btn">
-                                    <NotificationButton/>
+                                        <NotificationButton />
                                     </div>
                                 </div>
                             </td>
